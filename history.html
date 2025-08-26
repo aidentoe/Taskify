@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Challenge History</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Completed Challenges</h1>
+    <ul id="history-list"></ul>
+
+    <button class="nav-button" onclick="window.location.href='index.html'">
+      ⬅️ Back to Home
+    </button>
+
+    <script>
+      const history =
+        JSON.parse(localStorage.getItem("challengeHistory")) || [];
+      const historyList = document.getElementById("history-list");
+
+      if (history.length === 0) {
+        historyList.innerHTML = "<p>No challenges completed yet!</p>";
+      } else {
+        history.forEach((challenge) => {
+          const li = document.createElement("li");
+          li.textContent = challenge;
+          historyList.appendChild(li);
+        });
+      }
+    </script>
+  </body>
+</html>
