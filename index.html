@@ -4,10 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Daily Independence Challenge</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-    <input type="file" id="file-el" />
+    <h1>Daily Independence Challenge</h1>
+    <div id="challenge-box">
+      <div id="challenge"></div>
+      <button id="completeBtn">Complete Challenge</button>
+      <button id="newBtn">New Challenge</button>
+      <div id="message"></div>
+      <div id="streak">Streak: <span id="streakCount"></span></div>
+      <div id="create-challenge">
+        <input type="text" id="customChallenge" placeholder="Add your own challenge" />
+        <button id="addChallengeBtn">Add</button>
+      </div>
+      <div id="navigation">
+        <button id="historyBtn" onclick="window.location.href='history.html'">See History</button>
+      </div>
+    </div>
+    <script src="script.js"></script>
   </body>
 </html>
